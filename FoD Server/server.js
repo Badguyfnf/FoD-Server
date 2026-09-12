@@ -18,7 +18,7 @@ wss.on('connection', (ws) => {
                 servers[wsId] = { 
                     name: data.name || "Сервер", 
                     players: data.players || 1,
-                    max_players: data.max_players || 3,
+                    max_players: data.max_players || 4,
                     ws: ws 
                 };
             } 
@@ -32,7 +32,7 @@ wss.on('connection', (ws) => {
                     id: id, 
                     name: servers[id].name,
                     players: servers[id].players || 1,
-                    max_players: servers[id].max_players || 3
+                    max_players: servers[id].max_players || 4
                 }));
                 ws.send(JSON.stringify({ type: 'server_list', servers: list }));
             } 
